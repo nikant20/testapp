@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build with Maven') {
             steps {
-                withMaven(tool: 'Maven 3.9.1') { // Replace with your configured name
+                withMaven(tool: 'maven') { // Replace with your configured name
                     sh 'mvn clean package'
                 }
             }
