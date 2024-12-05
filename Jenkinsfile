@@ -6,10 +6,12 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/nikant20/testapp.git'
             }
         }
-        stage('Build') {
+        stage('Build with Maven') {
             steps {
-                sh 'mvn clean package'
-        }
+                withMaven(tool: 'Maven 3.9.1') { // Replace with your configured name
+                    sh 'mvn clean package'
+                }
+            }
         }
         stage('Deploy') {
             steps {
