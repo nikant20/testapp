@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/nikant20/testapp.git
+                git branch: 'main', url: 'https://github.com/nikant20/testapp.git'
             }
         }
         stage('Build') {
